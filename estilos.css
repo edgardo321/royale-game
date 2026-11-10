@@ -1,0 +1,538 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+ 
+:root {
+    --morado-principal: #9b59b6; /* Púrpura Real del Logo */
+    --morado-oscuro: #6b3fa0;    /* Tono profundo para hovers */
+    --morado-claro: #1A1528;     /* Superficies / tarjetas oscuras suaves */
+    --acento-oro: #F39C12;       /* Color de acento para hacer resaltar CTAs y elementos */
+    --negro-fondo: #0B0B0E;      /* Fondo general de la página */
+    --texto-oscuro: #e2e8f0;     /* Texto principal claro para legibilidad */
+    --negro-puro: #040207;       /* Negro profundo para barras y footer */
+}
+ 
+body {
+    background-color: var(--negro-fondo);
+    color: var(--texto-oscuro);
+}
+ 
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+ 
+.seccion {
+    padding: 40px 0;
+}
+ 
+/* TOPBAR Y HEADER */
+.topbar {
+    background-color: var(--negro-puro);
+    color: #d8b4fe;
+    font-size: 12px;
+    padding: 8px 0;
+}
+ 
+.topbar-contenido {
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.header-principal {
+    background-color: var(--negro-puro);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.7);
+    border-bottom: 1px solid #1f1a29;
+}
+ 
+/* NAV AMPLIADA EN TAMAÑO */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px; /* <--- Altura y espaciado aumentados */
+}
+ 
+/* LOGOTIPO ILUMINADO Y AGRANDADO */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 26px; /* <--- Tamaño de texto del logo aumentado */
+    font-weight: bold;
+    color: var(--morado-principal);
+    text-decoration: none;
+    /* Resplandor base para destacar el logo */
+    filter: drop-shadow(0 0 10px rgba(252, 252, 252, 0.6));
+    transition: filter 2s ease, transform 2s ease;
+}
+ 
+.logo span {
+    color: var(--texto-oscuro);
+    text-shadow: 0 0 8px rgba(226, 232, 240, 0.3);
+}
+ 
+/* Efecto de iluminación para la imagen de la corona o icono dentro del logo */
+.logo img, .marca-footer img {
+    filter: drop-shadow(0 0 12px rgba(155, 89, 182, 0.8));
+    transition: filter 0.3s ease;
+}
+ 
+/* Efecto al pasar el cursor (hover) con destello dorado/ámbar */
+.logo:hover {
+    filter: drop-shadow(0 0 16px rgba(243, 156, 18, 0.85));
+    transform: scale(1.02);
+}
+ 
+/* MENÚ DE NAVEGACIÓN AGRANDADO */
+.menu-navegacion a {
+    text-decoration: none;
+    color: var(--texto-oscuro);
+    margin-left: 22px;  /* <--- Mayor separación entre opciones */
+    font-size: 17px;    /* <--- Texto más grande para la nav */
+    font-weight: 600;   /* <--- Mayor grosor para destacar */
+    transition: color 0.2s ease;
+}
+ 
+.menu-navegacion a:hover {
+    color: var(--acento-oro);
+}
+ 
+.btn-cita {
+    background-color: var(--acento-oro);
+    color: #0b0b0e !important;
+    padding: 10px 20px; /* <--- Botón más amplio para coincidir con la nav */
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(243, 156, 18, 0.3);
+}
+ 
+.btn-cita:hover {
+    background-color: #d68910;
+}
+ 
+/* HERO Y ENCABEZADOS DE PÁGINA */
+.hero {
+    background: linear-gradient(rgba(11, 11, 14, 0.9), rgba(26, 21, 40, 0.85)), url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+ 
+.hero h1 { font-size: 36px; margin-bottom: 10px; color: #f3e8ff; }
+.hero p { font-size: 18px; margin-bottom: 20px; color: #cbd5e1; }
+ 
+.btn-primario {
+    background-color: var(--morado-principal);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.4);
+    transition: background-color 0.2s ease;
+}
+ 
+.btn-primario:hover {
+    background-color: var(--morado-oscuro);
+}
+ 
+.btn-secundario {
+    background-color: var(--negro-puro);
+    color: #e9d5ff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 10px;
+    border: 1px solid var(--morado-oscuro);
+}
+ 
+.btn-secundario:hover {
+    background-color: #1a1528;
+}
+ 
+.encabezado-pagina {
+    background-color: var(--morado-claro);
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--morado-oscuro);
+}
+ 
+/* GRID Y TARJETAS */
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+ 
+.tarjeta-acceso, .tarjeta-servicio, .tarjeta-doctor {
+    background: var(--morado-claro);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #2d2342;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    color: var(--texto-oscuro);
+}
+ 
+.icono-servicio, .avatar-doctor {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: var(--morado-principal);
+}
+ 
+.grid-dos-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+ 
+.caja-destacada {
+    background: var(--morado-claro);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #2d2342;
+    color: var(--texto-oscuro);
+}
+ 
+/* TABLA DE PRECIOS */
+.tabla-precios {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--morado-claro);
+    color: var(--texto-oscuro);
+}
+ 
+.tabla-precios th, .tabla-precios td {
+    padding: 12px 15px;
+    border: 1px solid #2d2342;
+    text-align: left;
+}
+ 
+.tabla-precios th {
+    background-color: var(--negro-puro);
+    color: #e9d5ff;
+}
+ 
+/* FORMULARIO */
+.caja-formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--morado-claro);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #2d2342;
+    color: var(--texto-oscuro);
+}
+ 
+.campo { margin-bottom: 15px; }
+.campo label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--texto-oscuro); }
+.campo input, .campo select, .campo textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--negro-puro);
+    color: var(--texto-oscuro);
+    border: 1px solid #2d2342;
+    border-radius: 5px;
+}
+ 
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    outline: none;
+    border-color: var(--morado-principal);
+    box-shadow: 0 0 5px rgba(155, 89, 182, 0.4);
+}
+ 
+.btn-bloque { width: 100%; }
+ 
+.alerta-exito {
+    background-color: var(--morado-claro);
+    color: #e9d5ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid var(--morado-oscuro);
+}
+ 
+/* ====== CARDS ESTILO EPIC GAMES ====== */
+.titulo-paso {
+    font-size: 20px;
+    color: #f3e8ff;
+    margin: 32px 0 16px;
+}
+ 
+.campo-gamer {
+    max-width: 420px;
+}
+ 
+.grid-juegos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 24px;
+    padding: 10px 0 20px;
+}
+ 
+.card-juego {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--texto-oscuro);
+}
+ 
+/* Radios ocultos: siguen funcionando en el formulario */
+.card-juego input,
+.card-monto input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+ 
+/* Portada vertical 3:4 como en Epic */
+.card-imagen {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--morado-claro);
+    border: 2px solid transparent;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+ 
+.card-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+ 
+.card-icono {
+    font-size: 64px;
+    transition: transform 0.35s ease;
+}
+ 
+.card-juego:hover .card-imagen {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(155, 89, 182, 0.4);
+}
+ 
+.card-juego:hover .card-icono,
+.card-juego:hover .card-imagen img {
+    transform: scale(1.1);
+}
+ 
+/* Etiqueta de descuento */
+.card-descuento {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--acento-oro);
+    color: #0b0b0e;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+ 
+/* Botón de lista de deseos */
+.card-deseo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease, background 0.2s ease;
+}
+ 
+.card-juego:hover .card-deseo {
+    opacity: 1;
+}
+ 
+.card-deseo:hover {
+    background: var(--morado-principal);
+}
+ 
+/* Check de seleccionado */
+.card-check {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--morado-principal);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s ease;
+}
+ 
+.card-juego input:checked + .card-imagen {
+    border-color: var(--morado-principal);
+    box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.35);
+}
+ 
+.card-juego input:checked + .card-imagen .card-check {
+    opacity: 1;
+    transform: scale(1);
+}
+ 
+.card-juego input:focus-visible + .card-imagen {
+    outline: 2px solid #fff;
+}
+ 
+/* Información debajo de la imagen */
+.card-info {
+    padding: 12px 4px 0;
+}
+ 
+.card-tipo {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+ 
+.card-titulo {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 8px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+ 
+.card-precios {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+ 
+.precio-viejo {
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+ 
+.precio-actual {
+    color: #fff;
+    font-weight: 600;
+}
+ 
+.precio-gratis {
+    color: var(--acento-oro);
+    font-weight: 700;
+}
+ 
+/* Montos */
+.grid-montos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+ 
+.card-monto {
+    position: relative;
+    cursor: pointer;
+}
+ 
+.card-monto span {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--morado-claro);
+    border: 2px solid #2d2342;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+ 
+.card-monto:hover span {
+    border-color: var(--morado-principal);
+    transform: translateY(-3px);
+}
+ 
+.card-monto input:checked + span {
+    background: var(--morado-principal);
+    border-color: #c39bd3;
+    box-shadow: 0 0 12px rgba(155, 89, 182, 0.5);
+}
+ 
+.card-monto input:focus-visible + span {
+    outline: 2px solid #fff;
+}
+ 
+/* FOOTER */
+.pie-pagina {
+    background: var(--negro-puro);
+    color: white;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #1f1a29;
+}
+ 
+.grid-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding-bottom: 20px;
+}
+ 
+.marca-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+ 
+.marca-footer img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+ 
+.marca-footer h3 {
+    color: var(--texto-oscuro);
+}
+ 
+.pie-pagina a { color: #cbd5e1; text-decoration: none; transition: color 0.2s ease; }
+.pie-pagina a:hover { color: var(--acento-oro); }
+ 
+.copyright {
+    text-align: center;
+    padding: 15px;
+    background: #040207;
+    font-size: 12px;
+    color: #94a3b8;
+    border-top: 1px solid #161220;
+}
