@@ -1,1 +1,2 @@
-# royale-game
+Royale games dominio
+royalegame.gamer.gd
